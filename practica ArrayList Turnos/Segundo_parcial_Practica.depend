@@ -20,3 +20,26 @@
 
 1529441226 c:\test\mmadou\segundo_parcial_practica\tramites.h
 
+1529583886 source:c:\users\alumno\desktop\practica arraylist turnos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"ArrayList.h"
+	"tramites.h"
+
+1529455996 c:\users\alumno\desktop\practica arraylist turnos\arraylist.h
+
+1529583886 c:\users\alumno\desktop\practica arraylist turnos\tramites.h
+
+1529583886 source:c:\users\alumno\desktop\practica arraylist turnos\tramites.c
+	<stdio.h>
+	<stdlib.h>
+	"arrayList.h"
+	"tramites.h"
+
+1529591072 source:c:\users\alumno\desktop\practica arraylist turnos\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+

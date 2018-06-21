@@ -237,5 +237,3 @@ int resizeUp(ArrayList* this);
 int expand(ArrayList* this,int index);
 int contract(ArrayList* this,int index);
 //___________________
-
-

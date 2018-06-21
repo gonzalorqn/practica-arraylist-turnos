@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "arrayList.h"
+#include "ArrayList.h"
 #include "tramites.h"
 
 eTramite* tramite_newTramite()
