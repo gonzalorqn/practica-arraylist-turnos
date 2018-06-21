@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1529440998 source:c:\test\mmadou\segundo_parcial_practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1529440993 source:c:\test\mmadou\segundo_parcial_practica\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529440868 c:\test\mmadou\segundo_parcial_practica\arraylist.h
+
+1529441194 source:c:\test\mmadou\segundo_parcial_practica\tramites.c
+	<stdio.h>
+	<stdlib.h>
+	"arrayList.h"
+	"tramites.h"
+
+1529441226 c:\test\mmadou\segundo_parcial_practica\tramites.h
+
