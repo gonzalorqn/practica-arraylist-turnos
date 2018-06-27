@@ -31,9 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ArrayList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ArrayList.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="tramites.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tramites.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -27,7 +27,7 @@ int main()
     ArrayList* listaUrgente= al_newArrayList();
     ArrayList* listaRegular= al_newArrayList();
     ArrayList* listaAtendido= al_newArrayList();
-    ArrayList* clon=al_newArrayList();
+    ArrayList* clon;
 
     eTramite* aux;
 
@@ -50,14 +50,16 @@ int main()
                 numTurno++;
                 listaUrgente->add(listaUrgente,nuevoTramite);
             }
-                else
-                {
-                    printf("No se pudo cargar su tramite.");
-                }
-                    getche();
-                    system("cls");
+            else
+            {
+                printf("No se pudo cargar su tramite.");
+            }
 
-                    break;
+            getche();
+            system("cls");
+
+            break;
+
         case 2:
             nuevoTramite= tramite_turnoRegular(numTurno);
 
@@ -66,75 +68,84 @@ int main()
                 numTurno++;
                 listaRegular->add(listaRegular,nuevoTramite);
             }
-                else
-                {
-                    printf("No se pudo cargar su tramite.");
-                }
+            else
+            {
+                printf("No se pudo cargar su tramite.");
+            }
 
-                    getche();
-                    system("cls");
-                    break;
+            getche();
+            system("cls");
+
+            break;
+
         case 3:
             tramite_siguiente(listaUrgente,listaRegular,listaAtendido);
-                getche();
-                system("cls");
-                break;
+            getche();
+            system("cls");
+
+            break;
+
         case 4:
             tramite_listarPendientes(listaUrgente,listaRegular);
-                getche();
-                system("cls");
-                break;
+            getche();
+            system("cls");
+
+            break;
+
         case 5:
             al_sort(listaAtendido,tramite_ordenarDNI,0);
 
             printf("Tramites urgentes atendidos:\n");
 
-                for(i=0; i<al_len(listaAtendido); i++)
+            for(i=0; i<al_len(listaAtendido); i++)
+            {
+                aux=(eTramite*)al_get(listaAtendido,i);
+                if(aux->idTramite==100)
                 {
-                    aux=(eTramite*)al_get(listaAtendido,i);
-                    if(aux->idTramite==100)
-                    {
-                        printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
-                    }
+                    printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
                 }
+            }
 
             printf("Tramites regulares atendidos:\n");
 
-                for(i=0; i<al_len(listaAtendido); i++)
+            for(i=0; i<al_len(listaAtendido); i++)
+            {
+                aux=(eTramite*)al_get(listaAtendido,i);
+                if(aux->idTramite==102)
                 {
-                    aux=(eTramite*)al_get(listaAtendido,i);
-                    if(aux->idTramite==102)
-                    {
-                        printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
-                    }
+                    printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
                 }
+            }
 
-                getche();
-                system("cls");
-                break;
+            getche();
+            system("cls");
+
+            break;
 
         case 6:
             seguir='n';
             break;
+
         case 7:
             clon=al_clone(listaAtendido);
 
             printf("Lista clonada\n");
-                for(i=0; i<al_len(clon); i++)
+            for(i=0; i<al_len(clon); i++)
+            {
+                aux=(eTramite*)al_get(clon,i);
+                if(aux->idTramite==100)
                 {
-                    aux=(eTramite*)al_get(clon,i);
-                    if(aux->idTramite==100)
-                    {
-                        printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
-                    }
+                    printf("DNI:%ld\tTurno: %d\n",aux->dni,aux->turno);
                 }
-                printf("\n");
+            }
+            printf("\n");
 
-                getche();
-                system("cls");
-                break;
+            getche();
+            system("cls");
+
+            break;
+
         case 8:
-
             clon=al_subList(listaAtendido,0,2);
             printf("Lista subLista");
             for(i=0; i<al_len(clon); i++)
@@ -146,24 +157,25 @@ int main()
                 }
             }
 
+            printf("\n");
 
+            getche();
+            system("cls");
 
-                printf("\n");
-
-                getche();
-                system("cls");
-                break;
+            break;
 
         case 9:
-                nuevoTramite =(eTramite*) malloc(sizeof(eTramite));
-                nuevoTramite->dni=10;
-                nuevoTramite->idTramite=100;
-                nuevoTramite->turno =58;
-                if(al_set(listaAtendido,0,nuevoTramite))
-                    {
-                    printf("se seteo");
-                    }
+            nuevoTramite =(eTramite*) malloc(sizeof(eTramite));
+            nuevoTramite->dni=10;
+            nuevoTramite->idTramite=100;
+            nuevoTramite->turno =58;
+            if(al_set(listaAtendido,0,nuevoTramite))
+            {
+                printf("se seteo");
+            }
+
             break;
+
         case 10:
             printf("al_containsAll\n");
 
@@ -176,16 +188,20 @@ int main()
         case 11:
             al_clear(listaAtendido);
             printf("clear");
-                    break;
+
+            break;
+
         case 12:
             printf("push\n");
-             nuevoTramite =(eTramite*) malloc(sizeof(eTramite));
+            nuevoTramite =(eTramite*) malloc(sizeof(eTramite));
             nuevoTramite->dni=10;
             nuevoTramite->idTramite=100;
             nuevoTramite->turno =58;
 
             al_push(listaAtendido,0,nuevoTramite);
-                    break;
+
+            break;
+
         case 13:
             printf("Is empty");
             if(al_isEmpty(listaAtendido))
@@ -194,7 +210,8 @@ int main()
                     printf("No esta vacio");
                     else
                         printf("null");
-                    break;
+
+            break;
         }
 
     }
